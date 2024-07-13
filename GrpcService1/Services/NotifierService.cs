@@ -17,7 +17,7 @@ namespace GrpcService1.Services
             var config = new ConsumerConfig
             {
                 BootstrapServers = "localhost:9092",
-                GroupId = "test-consumer-group",
+                GroupId = "consumer-group",
                 AutoOffsetReset = AutoOffsetReset.Earliest
             };
             using (var consumer = new ConsumerBuilder<Ignore, string>(config).Build())
