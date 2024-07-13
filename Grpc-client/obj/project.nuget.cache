@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "E+r3jp5nAMU=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\user\\Desktop\\stream\\GrpcService1\\Grpc-client\\Grpc-client.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\confluent.kafka\\2.5.0\\confluent.kafka.2.5.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\google.protobuf\\3.27.2\\google.protobuf.3.27.2.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\grpc.core.api\\2.63.0\\grpc.core.api.2.63.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\grpc.net.client\\2.63.0\\grpc.net.client.2.63.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\grpc.net.common\\2.63.0\\grpc.net.common.2.63.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\grpc.tools\\2.64.0\\grpc.tools.2.64.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\librdkafka.redist\\2.5.0\\librdkafka.redist.2.5.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\system.memory\\4.5.0\\system.memory.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
