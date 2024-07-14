@@ -1,6 +1,9 @@
-﻿using DuplexStreaming;
+using DuplexStreaming;
 using Grpc.Net.Client;
-using Confluent.Kafka;
+using Grpc.Core;
+using System;
+using System.Threading.Tasks;
+using Microsoft.VisualBasic;
 
 namespace GrpcClient
 {
@@ -8,51 +11,62 @@ namespace GrpcClient
     {
         static async Task Main(string[] args)
         {
-           using var channel = GrpcChannel.ForAddress("http://localhost:5286");
-           var client = new Notifier.NotifierClient(channel);
+            // The port number must match the port of the gRPC server.
+            using var channel = GrpcChannel.ForAddress("http://localhost:5286");
+            var client = new Notifier.NotifierClient(channel);
             using var call = client.ChatNotification();
-            var responseReaderTask = Task.Run(async Task () =>
+
+            var responseReaderTask = Task.Run(async () =>
             {
                 while (await call.ResponseStream.MoveNext(CancellationToken.None))
                 {
                     var note = call.ResponseStream.Current;
-                    Console.WriteLine($"recieved kafka message {note.Message} created At {note.ReceivedAt}");
-
+                    Console.WriteLine($"{note.Message}, received at {note.ReceivedAt}");
                 }
-                var config = new ConsumerConfig
-                {
-                    BootstrapServers = "localhost:9092",
-                    GroupId = "consumer-group",
-                    AutoOffsetReset = AutoOffsetReset.Earliest
-                };
-
             });
-       
 
+            foreach (var msg in new[] { "Tom", "Jones" })
+            {
+                var request = new NotificationRequest
+                { Message = $"Hello {msg}", From = "Mom", To = msg };
+                await call.RequestStream.WriteAsync(request);
+            }
+
+            await call.RequestStream.CompleteAsync();
+            await responseReaderTask;
+
+            Console.WriteLine("Press any key to exit...");
+            Console.ReadKey();
         }
     }
 }
 
-//    using var call = client.ChatNotification();
-//    var responseReaderTask = Task.Run(async Task () =>
+//using DuplexStreaming;
+//using Grpc.Net.Client;
+
+//// The port number must match the port of the gRPC server.
+//using var channel = GrpcChannel.ForAddress("http://localhost:5295");
+//var client = new Notifier.NotifierClient(channel);
+//using var call = client.ChatNotification();
+
+//var responseReaderTask = Task.Run(async Task () =>
+//{
+//    while (await call.ResponseStream.MoveNext(CancellationToken.None))
 //    {
-//        while (await call.ResponseStream.MoveNext(CancellationToken.None))
-//        {
-//            var note = call.ResponseStream.Current;
-//            Console.WriteLine($"{note.Message}, received at {note.ReceivedAt}");
-//        }
-//    });
-//    foreach (var msg in new[] {"tom" , "jones"})
-//    {
-//        var request = new NotificationRequest
-//        {
-//             Message = $"Hello {msg}", From = "Mom", To = msg
-//        };
-//        await call.RequestStream.WriteAsync(request);
+//        var note = call.ResponseStream.Current;
+//        Console.WriteLine($"{note.Message}, received at {note.ReceivedAt}");
 //    }
-//    await call.RequestStream.CompleteAsync();
-//    await responseReaderTask;
+//});
 
+//foreach (var msg in new[] { "Tom", "Jones" })
+//{
+//    var request = new NotificationsRequest()
+//    { Message = $"Hello {msg}", From = "Mom", To = msg };
+//    await call.RequestStream.WriteAsync(request);
+//}
 
-//    Console.WriteLine("Press any key to exit...");
-//    Console.ReadKey();
+//await call.RequestStream.CompleteAsync();
+//await responseReaderTask;
+
+//Console.WriteLine("Press any key to exit...");
+//Console.ReadKey();
