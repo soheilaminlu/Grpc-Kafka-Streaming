@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\Desktop\\stream\\GrpcService1\\GrpcService1\\GrpcService1.csproj": {}
+    "D:\\Grpc-Streaming\\GrpcService1\\GrpcService1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\Desktop\\stream\\GrpcService1\\GrpcService1\\GrpcService1.csproj": {
+    "D:\\Grpc-Streaming\\GrpcService1\\GrpcService1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Desktop\\stream\\GrpcService1\\GrpcService1\\GrpcService1.csproj",
+        "projectUniqueName": "D:\\Grpc-Streaming\\GrpcService1\\GrpcService1.csproj",
         "projectName": "GrpcService1",
-        "projectPath": "C:\\Users\\user\\Desktop\\stream\\GrpcService1\\GrpcService1\\GrpcService1.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Desktop\\stream\\GrpcService1\\GrpcService1\\obj\\",
+        "projectPath": "D:\\Grpc-Streaming\\GrpcService1\\GrpcService1.csproj",
+        "packagesPath": "C:\\Users\\sejron.com\\.nuget\\packages\\",
+        "outputPath": "D:\\Grpc-Streaming\\GrpcService1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sejron.com\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -84,7 +84,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -17,7 +17,7 @@ namespace GrpcClient
             using var call = client.ChatNotification();
 
             var config = new ConfigurationBuilder()
-                .AddJsonFile("appsettings.json")
+                .AddJsonFile("appsettings.json" , optional:false , reloadOnChange:true)
                 .Build();
 
             var bootstrapServer = config["kafka:BootstrapServers"];
@@ -26,8 +26,9 @@ namespace GrpcClient
             var consumerConfig = new ConsumerConfig
             {
                 BootstrapServers = bootstrapServer,
-                GroupId = "Soheil-G",
-                AutoOffsetReset = AutoOffsetReset.Earliest
+                GroupId = "Soheil-G" + Guid.NewGuid().ToString(),
+                AutoOffsetReset = AutoOffsetReset.Earliest,
+                EnableAutoCommit = false,
             };
 
             using var consumer = new ConsumerBuilder<Ignore, string>(consumerConfig).Build();
@@ -60,6 +61,7 @@ namespace GrpcClient
                     }
                     await call.RequestStream.CompleteAsync();
                     await responseReaderTask;
+                    consumer.Commit(consumerResult);
                     Console.WriteLine("press to con..........");
                     Console.ReadKey();
                 }

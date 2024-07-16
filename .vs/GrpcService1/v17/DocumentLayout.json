@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\stream\\GrpcService1\\",
+  "WorkspaceRootPath": "D:\\Grpc-Streaming\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{91093D98-DFCD-4ED6-B10F-17370AEB03F2}|Grpc-client\\Grpc-client.csproj|c:\\users\\user\\desktop\\stream\\grpcservice1\\grpc-client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{91093D98-DFCD-4ED6-B10F-17370AEB03F2}|Grpc-client\\Grpc-client.csproj|d:\\grpc-streaming\\grpc-client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{91093D98-DFCD-4ED6-B10F-17370AEB03F2}|Grpc-client\\Grpc-client.csproj|solutionrelative:grpc-client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -20,13 +20,13 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\stream\\GrpcService1\\Grpc-client\\Program.cs",
+              "DocumentMoniker": "D:\\Grpc-Streaming\\Grpc-client\\Program.cs",
               "RelativeDocumentMoniker": "Grpc-client\\Program.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\stream\\GrpcService1\\Grpc-client\\Program.cs",
+              "ToolTip": "D:\\Grpc-Streaming\\Grpc-client\\Program.cs",
               "RelativeToolTip": "Grpc-client\\Program.cs",
-              "ViewState": "AQIAAE8AAAAAAAAAAAAgwBsAAAAzAAAA",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAQwAcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T11:34:03.816Z",
+              "WhenOpened": "2024-07-16T13:51:24.406Z",
               "EditorCaption": ""
             }
           ]
