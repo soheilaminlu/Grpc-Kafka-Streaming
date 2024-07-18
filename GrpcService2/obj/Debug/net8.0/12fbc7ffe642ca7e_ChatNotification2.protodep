@@ -1,0 +1,2 @@
+obj\Debug\net8.0\Protos/ChatNotification2.cs \
+obj\Debug\net8.0\Protos/ChatNotification2Grpc.cs: Protos/ChatNotification2.proto

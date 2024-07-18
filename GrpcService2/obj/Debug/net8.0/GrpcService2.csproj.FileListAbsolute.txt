@@ -1,0 +1,7 @@
+D:\Grpc-Streaming\GrpcService2\obj\Debug\net8.0\GrpcService2.csproj.AssemblyReference.cache
+D:\Grpc-Streaming\GrpcService2\obj\Debug\net8.0\GrpcService2.GeneratedMSBuildEditorConfig.editorconfig
+D:\Grpc-Streaming\GrpcService2\obj\Debug\net8.0\GrpcService2.AssemblyInfoInputs.cache
+D:\Grpc-Streaming\GrpcService2\obj\Debug\net8.0\GrpcService2.AssemblyInfo.cs
+D:\Grpc-Streaming\GrpcService2\obj\Debug\net8.0\GrpcService2.csproj.CoreCompileInputs.cache
+D:\Grpc-Streaming\GrpcService2\obj\Debug\net8.0\GrpcService2.MvcApplicationPartsAssemblyInfo.cache
+D:\Grpc-Streaming\GrpcService2\obj\Debug\net8.0\GrpcService2.sourcelink.json

@@ -23,7 +23,7 @@ public class NotifierService : Notifier.NotifierBase
             var now = Timestamp.FromDateTimeOffset(DateTimeOffset.UtcNow);
             var reply = new NotificationReply()
             {
-                Message = $"Hi {request.From} , you have message {request.Message} to {request.To}",
+                Message = $"{request.Message}",
                 ReceivedAt = now
             };
 

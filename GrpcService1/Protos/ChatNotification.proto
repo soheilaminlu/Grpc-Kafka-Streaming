@@ -12,8 +12,6 @@ service Notifier {
 
 message NotificationRequest {
   string message = 1;
-  string to = 2;
-  string from = 3;
 };
 
 

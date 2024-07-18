@@ -1,10 +1,10 @@
-using DuplexStreaming;
-using Confluent.Kafka;
+﻿using DuplexStreaming;
 using Grpc.Net.Client;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.Extensions.Configuration;
+using Grpc_client.KafkaConsumer;
 
 namespace GrpcClient
 {
@@ -12,96 +12,79 @@ namespace GrpcClient
     {
         static async Task Main(string[] args)
         {
+            // ایجاد کانال gRPC
             using var channel = GrpcChannel.ForAddress("http://localhost:5286");
             var client = new Notifier.NotifierClient(channel);
             using var call = client.ChatNotification();
 
+            // خواندن تنظیمات از فایل appsettings.json
             var config = new ConfigurationBuilder()
-                .AddJsonFile("appsettings.json" , optional:false , reloadOnChange:true)
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .Build();
 
             var bootstrapServer = config["kafka:BootstrapServers"];
             var topic = config["kafka:Topic"];
 
-            var consumerConfig = new ConsumerConfig
-            {
-                BootstrapServers = bootstrapServer,
-                GroupId = "Soheil-G" + Guid.NewGuid().ToString(),
-                AutoOffsetReset = AutoOffsetReset.Earliest,
-                EnableAutoCommit = false,
-            };
+            // ایجاد یک نمونه از KafkaConsumer
+            var kafkaConsumer = new KafkaConsumer(bootstrapServer, topic);
 
-            using var consumer = new ConsumerBuilder<Ignore, string>(consumerConfig).Build();
-            consumer.Subscribe(topic);
-
-            try
+            // خواندن پاسخ‌های gRPC
+            var responseReaderTask = Task.Run(async () =>
             {
-                while (true)
+                while (await call.ResponseStream.MoveNext(CancellationToken.None))
                 {
-                    var consumerResult = consumer.Consume(CancellationToken.None);
-                    var message = consumerResult.Message.Value;
-                    var responseReaderTask = Task.Run(async () =>
-                    {
-                        while (await call.ResponseStream.MoveNext(CancellationToken.None))
-                        {
-                            var note = call.ResponseStream.Current;
-                            Console.WriteLine($"{note.Message}, received at {note.ReceivedAt}");
-                        }
-                    });
-                    foreach (var msg in new[] { "ali", "reza" })
-                    {
-                        var request = new NotificationRequest
-                        {
-                            Message = message,
-                            From = "kafka",
-                            To = message
-
-                        };
-                        await call.RequestStream.WriteAsync(request);
-                    }
-                    await call.RequestStream.CompleteAsync();
-                    await responseReaderTask;
-                    consumer.Commit(consumerResult);
-                    Console.WriteLine("press to con..........");
-                    Console.ReadKey();
+                    var note = call.ResponseStream.Current;
+                    Console.WriteLine($"{note.Message}, received at {note.ReceivedAt}");
                 }
-            }
-            catch (Exception ex)
+            });
+
+            // مصرف داده‌ها از Kafka و ارسال آن‌ها به NotifierService
+            await kafkaConsumer.ConsumeAsync(async (message) =>
             {
-                Console.WriteLine(ex);
-            }
+                var request = new NotificationRequest
+                {
+                    Message = message
+                };
+                await call.RequestStream.WriteAsync(request);
+            }, CancellationToken.None);
+
+            await call.RequestStream.CompleteAsync();
+            await responseReaderTask;
+
+            Console.WriteLine("Press any key to exit...");
+            Console.ReadKey();
         }
     }
 }
 
-            //        using var channel = GrpcChannel.ForAddress("http://localhost:5286");
-            //        var client = new Notifier.NotifierClient(channel);
-            //        using var call = client.ChatNotification();
+//        using var channel = GrpcChannel.ForAddress("http://localhost:5286");
+//        var client = new Notifier.NotifierClient(channel);
+//        using var call = client.ChatNotification();
 
-            //        var responseReaderTask = Task.Run(async () =>
-            //        {
-            //            while (await call.ResponseStream.MoveNext(CancellationToken.None))
-            //            {
-            //                var note = call.ResponseStream.Current;
-            //                Console.WriteLine($"{note.Message}, received at {note.ReceivedAt}");
-            //            }
-            //        });
+//        var responseReaderTask = Task.Run(async () =>
+//        {
+//            while (await call.ResponseStream.MoveNext(CancellationToken.None))
+//            {
+//                var note = call.ResponseStream.Current;
+//                Console.WriteLine($"{note.Message}, received at {note.ReceivedAt}");
+//            }
+//        });
 
-            //        foreach (var msg in new[] { "Tom", "Jones" })
-            //        {
-            //            var request = new NotificationRequest
-            //            { Message = $"Hello {msg}", From = "Mom", To = msg };
-            //            await call.RequestStream.WriteAsync(request);
-            //        }
+//        foreach (var msg in new[] { "Tom", "Jones" })
+//        {
+//            var request = new NotificationRequest
+//            { Message = $"Hello {msg}", From = "Mom", To = msg };
+//            await call.RequestStream.WriteAsync(request);
+//        }
 
-            //        await call.RequestStream.CompleteAsync();
-            //        await responseReaderTask;
+//        await call.RequestStream.CompleteAsync();
+//        await responseReaderTask;
 
-            //        Console.WriteLine("Press any key to exit...");
-            //        Console.ReadKey();
-            //    }
-            //}
-        
+//        Console.WriteLine("Press any key to exit...");
+//        Console.ReadKey();
+//    }
+//}
+
 
 //using DuplexStreaming;
 //using Grpc.Net.Client;

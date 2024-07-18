@@ -25,17 +25,17 @@ namespace DuplexStreaming {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch1Qcm90b3MvQ2hhdE5vdGlmaWNhdGlvbi5wcm90bxIGbm90aWZ5Gh9nb29n",
-            "bGUvcHJvdG9idWYvdGltZXN0YW1wLnByb3RvIkAKE05vdGlmaWNhdGlvblJl",
-            "cXVlc3QSDwoHbWVzc2FnZRgBIAEoCRIKCgJ0bxgCIAEoCRIMCgRmcm9tGAMg",
-            "ASgJIlQKEU5vdGlmaWNhdGlvblJlcGx5Eg8KB21lc3NhZ2UYASABKAkSLgoK",
-            "cmVjZWl2ZWRBdBgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXAy",
-            "WgoITm90aWZpZXISTgoQQ2hhdE5vdGlmaWNhdGlvbhIbLm5vdGlmeS5Ob3Rp",
-            "ZmljYXRpb25SZXF1ZXN0Ghkubm90aWZ5Lk5vdGlmaWNhdGlvblJlcGx5KAEw",
-            "AUISqgIPRHVwbGV4U3RyZWFtaW5nYgZwcm90bzM="));
+            "bGUvcHJvdG9idWYvdGltZXN0YW1wLnByb3RvIiYKE05vdGlmaWNhdGlvblJl",
+            "cXVlc3QSDwoHbWVzc2FnZRgBIAEoCSJUChFOb3RpZmljYXRpb25SZXBseRIP",
+            "CgdtZXNzYWdlGAEgASgJEi4KCnJlY2VpdmVkQXQYAyABKAsyGi5nb29nbGUu",
+            "cHJvdG9idWYuVGltZXN0YW1wMloKCE5vdGlmaWVyEk4KEENoYXROb3RpZmlj",
+            "YXRpb24SGy5ub3RpZnkuTm90aWZpY2F0aW9uUmVxdWVzdBoZLm5vdGlmeS5O",
+            "b3RpZmljYXRpb25SZXBseSgBMAFCEqoCD0R1cGxleFN0cmVhbWluZ2IGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::DuplexStreaming.NotificationRequest), global::DuplexStreaming.NotificationRequest.Parser, new[]{ "Message", "To", "From" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::DuplexStreaming.NotificationRequest), global::DuplexStreaming.NotificationRequest.Parser, new[]{ "Message" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::DuplexStreaming.NotificationReply), global::DuplexStreaming.NotificationReply.Parser, new[]{ "Message", "ReceivedAt" }, null, null, null, null)
           }));
     }
@@ -79,8 +79,6 @@ namespace DuplexStreaming {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public NotificationRequest(NotificationRequest other) : this() {
       message_ = other.message_;
-      to_ = other.to_;
-      from_ = other.from_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -102,30 +100,6 @@ namespace DuplexStreaming {
       }
     }
 
-    /// <summary>Field number for the "to" field.</summary>
-    public const int ToFieldNumber = 2;
-    private string to_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string To {
-      get { return to_; }
-      set {
-        to_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "from" field.</summary>
-    public const int FromFieldNumber = 3;
-    private string from_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string From {
-      get { return from_; }
-      set {
-        from_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -142,8 +116,6 @@ namespace DuplexStreaming {
         return true;
       }
       if (Message != other.Message) return false;
-      if (To != other.To) return false;
-      if (From != other.From) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -152,8 +124,6 @@ namespace DuplexStreaming {
     public override int GetHashCode() {
       int hash = 1;
       if (Message.Length != 0) hash ^= Message.GetHashCode();
-      if (To.Length != 0) hash ^= To.GetHashCode();
-      if (From.Length != 0) hash ^= From.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -176,14 +146,6 @@ namespace DuplexStreaming {
         output.WriteRawTag(10);
         output.WriteString(Message);
       }
-      if (To.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(To);
-      }
-      if (From.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(From);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -198,14 +160,6 @@ namespace DuplexStreaming {
         output.WriteRawTag(10);
         output.WriteString(Message);
       }
-      if (To.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(To);
-      }
-      if (From.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(From);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -218,12 +172,6 @@ namespace DuplexStreaming {
       int size = 0;
       if (Message.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
-      }
-      if (To.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(To);
-      }
-      if (From.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(From);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -239,12 +187,6 @@ namespace DuplexStreaming {
       }
       if (other.Message.Length != 0) {
         Message = other.Message;
-      }
-      if (other.To.Length != 0) {
-        To = other.To;
-      }
-      if (other.From.Length != 0) {
-        From = other.From;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -265,14 +207,6 @@ namespace DuplexStreaming {
             Message = input.ReadString();
             break;
           }
-          case 18: {
-            To = input.ReadString();
-            break;
-          }
-          case 26: {
-            From = input.ReadString();
-            break;
-          }
         }
       }
     #endif
@@ -290,14 +224,6 @@ namespace DuplexStreaming {
             break;
           case 10: {
             Message = input.ReadString();
-            break;
-          }
-          case 18: {
-            To = input.ReadString();
-            break;
-          }
-          case 26: {
-            From = input.ReadString();
             break;
           }
         }

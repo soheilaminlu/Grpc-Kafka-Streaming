@@ -3,8 +3,36 @@
   "WorkspaceRootPath": "D:\\Grpc-Streaming\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{60F4F3F3-7B01-4B43-AB85-89BDD7570D5D}|GrpcService2\\GrpcService2.csproj|d:\\grpc-streaming\\grpcservice2\\services\\noticationservice2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60F4F3F3-7B01-4B43-AB85-89BDD7570D5D}|GrpcService2\\GrpcService2.csproj|solutionrelative:grpcservice2\\services\\noticationservice2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60F4F3F3-7B01-4B43-AB85-89BDD7570D5D}|GrpcService2\\GrpcService2.csproj|d:\\grpc-streaming\\grpcservice2\\protos\\chatnotification2.proto||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{60F4F3F3-7B01-4B43-AB85-89BDD7570D5D}|GrpcService2\\GrpcService2.csproj|solutionrelative:grpcservice2\\protos\\chatnotification2.proto||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60F4F3F3-7B01-4B43-AB85-89BDD7570D5D}|GrpcService2\\GrpcService2.csproj|d:\\grpc-streaming\\grpcservice2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60F4F3F3-7B01-4B43-AB85-89BDD7570D5D}|GrpcService2\\GrpcService2.csproj|solutionrelative:grpcservice2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DAAA663-16F6-4400-A8B7-EC5299EF557E}|GrpcService1\\GrpcService1.csproj|d:\\grpc-streaming\\grpcservice1\\services\\notifierservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DAAA663-16F6-4400-A8B7-EC5299EF557E}|GrpcService1\\GrpcService1.csproj|solutionrelative:grpcservice1\\services\\notifierservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{91093D98-DFCD-4ED6-B10F-17370AEB03F2}|Grpc-client\\Grpc-client.csproj|d:\\grpc-streaming\\grpc-client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{91093D98-DFCD-4ED6-B10F-17370AEB03F2}|Grpc-client\\Grpc-client.csproj|solutionrelative:grpc-client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DAAA663-16F6-4400-A8B7-EC5299EF557E}|GrpcService1\\GrpcService1.csproj|d:\\grpc-streaming\\grpcservice1\\protos\\chatnotification.proto||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{1DAAA663-16F6-4400-A8B7-EC5299EF557E}|GrpcService1\\GrpcService1.csproj|solutionrelative:grpcservice1\\protos\\chatnotification.proto||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91093D98-DFCD-4ED6-B10F-17370AEB03F2}|Grpc-client\\Grpc-client.csproj|d:\\grpc-streaming\\grpc-client\\kafkaconsumer\\kafkaconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91093D98-DFCD-4ED6-B10F-17370AEB03F2}|Grpc-client\\Grpc-client.csproj|solutionrelative:grpc-client\\kafkaconsumer\\kafkaconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91093D98-DFCD-4ED6-B10F-17370AEB03F2}|Grpc-client\\Grpc-client.csproj|d:\\grpc-streaming\\grpc-client\\grpc-client.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{91093D98-DFCD-4ED6-B10F-17370AEB03F2}|Grpc-client\\Grpc-client.csproj|solutionrelative:grpc-client\\grpc-client.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +42,110 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ChatNotification.proto",
+              "DocumentMoniker": "D:\\Grpc-Streaming\\GrpcService1\\Protos\\ChatNotification.proto",
+              "RelativeDocumentMoniker": "GrpcService1\\Protos\\ChatNotification.proto",
+              "ToolTip": "D:\\Grpc-Streaming\\GrpcService1\\Protos\\ChatNotification.proto",
+              "RelativeToolTip": "GrpcService1\\Protos\\ChatNotification.proto",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003853|",
+              "WhenOpened": "2024-07-18T10:48:46.511Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "NotifierService.cs",
+              "DocumentMoniker": "D:\\Grpc-Streaming\\GrpcService1\\Services\\NotifierService.cs",
+              "RelativeDocumentMoniker": "GrpcService1\\Services\\NotifierService.cs",
+              "ToolTip": "D:\\Grpc-Streaming\\GrpcService1\\Services\\NotifierService.cs",
+              "RelativeToolTip": "GrpcService1\\Services\\NotifierService.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABoAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T10:35:27.612Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "NoticationService2.cs",
+              "DocumentMoniker": "D:\\Grpc-Streaming\\GrpcService2\\Services\\NoticationService2.cs",
+              "RelativeDocumentMoniker": "GrpcService2\\Services\\NoticationService2.cs",
+              "ToolTip": "D:\\Grpc-Streaming\\GrpcService2\\Services\\NoticationService2.cs",
+              "RelativeToolTip": "GrpcService2\\Services\\NoticationService2.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABIAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T10:27:24.048Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Grpc-Streaming\\GrpcService2\\Program.cs",
+              "RelativeDocumentMoniker": "GrpcService2\\Program.cs",
+              "ToolTip": "D:\\Grpc-Streaming\\GrpcService2\\Program.cs",
+              "RelativeToolTip": "GrpcService2\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T10:20:47.19Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ChatNotification2.proto",
+              "DocumentMoniker": "D:\\Grpc-Streaming\\GrpcService2\\Protos\\ChatNotification2.proto",
+              "RelativeDocumentMoniker": "GrpcService2\\Protos\\ChatNotification2.proto",
+              "ToolTip": "D:\\Grpc-Streaming\\GrpcService2\\Protos\\ChatNotification2.proto",
+              "RelativeToolTip": "GrpcService2\\Protos\\ChatNotification2.proto",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003853|",
+              "WhenOpened": "2024-07-18T10:17:54.506Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Grpc-Streaming\\Grpc-client\\Program.cs",
               "RelativeDocumentMoniker": "Grpc-client\\Program.cs",
               "ToolTip": "D:\\Grpc-Streaming\\Grpc-client\\Program.cs",
               "RelativeToolTip": "Grpc-client\\Program.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAQwAcAAAAAAAAA",
+              "ViewState": "AQIAACAAAAAAAAAAAAAAAAcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-16T13:51:24.406Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "kafkaconsumer.cs",
+              "DocumentMoniker": "D:\\Grpc-Streaming\\Grpc-client\\KafkaConsumer\\kafkaconsumer.cs",
+              "RelativeDocumentMoniker": "Grpc-client\\KafkaConsumer\\kafkaconsumer.cs",
+              "ToolTip": "D:\\Grpc-Streaming\\Grpc-client\\KafkaConsumer\\kafkaconsumer.cs",
+              "RelativeToolTip": "Grpc-client\\KafkaConsumer\\kafkaconsumer.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAAAAACgAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T09:44:55.448Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Grpc-client",
+              "DocumentMoniker": "D:\\Grpc-Streaming\\Grpc-client\\Grpc-client.csproj",
+              "RelativeDocumentMoniker": "Grpc-client\\Grpc-client.csproj",
+              "ToolTip": "D:\\Grpc-Streaming\\Grpc-client\\Grpc-client.csproj",
+              "RelativeToolTip": "Grpc-client\\Grpc-client.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-07-18T09:44:12.904Z",
               "EditorCaption": ""
             }
           ]
